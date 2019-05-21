@@ -12,11 +12,8 @@ class Hand:
     def stand(self):
         self.is_playing = False
 
-    def get_value(self):
-        return reduce(lambda x, y: int(x) + int(y), self.cards)
-
     def __int__(self):
-        return self.get_value()
+        return reduce(lambda x, y: int(x) + int(y), self.cards)
 
     def __str__(self):
         return "\n -".join([str(card) for card in self.cards])
